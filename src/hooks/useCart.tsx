@@ -75,7 +75,10 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     amount,
   }: UpdateProductAmount) => {
     try {
-      // TODO
+      await api.put('/stock/' + productId, {
+        id: productId,
+        amount: ++amount
+      })
     } catch {
       // TODO
     }
